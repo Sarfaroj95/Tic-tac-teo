@@ -1,0 +1,14 @@
+section {
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  margin: 2% auto 30px auto;
+  flex-wrap: wrap;
+}
+
+.square-container {
+  flex: 0 0 20%;
+  /* height: 100%; */
+}

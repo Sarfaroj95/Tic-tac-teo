@@ -1,0 +1,9 @@
+<div
+  class="game-square myShadow"
+  (click)="changePlayer()"
+  [ngClass]="{ noClick: gameService.win }"
+>
+  <p>
+    {{ square?.state }}
+  </p>
+</div>

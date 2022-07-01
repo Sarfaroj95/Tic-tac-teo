@@ -1,0 +1,24 @@
+{
+  "playerList": [
+    {
+      "playerName": "Tipu",
+      "playerSymbol": "T",
+      "id": 0
+    },
+    {
+      "playerName": "Rahul",
+      "playerSymbol": "#",
+      "id": 1
+    },
+    {
+      "playerName": "Virat",
+      "playerSymbol": "&",
+      "id": 2
+    },
+    {
+      "playerName": "Narin",
+      "playerSymbol": "*",
+      "id": 3
+    }
+  ]
+}

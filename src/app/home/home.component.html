@@ -1,0 +1,9 @@
+<section w-full>
+  <!-- row 1 -->
+  <div
+    class="square-container h-50"
+    *ngFor="let square of boardService.board; let inx = index"
+  >
+    <app-square-box [square]="square" border-blue> </app-square-box>
+  </div>
+</section>

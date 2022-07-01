@@ -1,0 +1,98 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3 bord">
+      <div class="header p-2 mt-4">
+        <h3 class="text-center">{{ gameService.activePlayer }}'S TURN</h3>
+        <hr />
+        <div *ngFor="let player of playersData; index as i">
+          <div class="d-flex justify-content-between">
+            <p class="player-name">
+              {{ player.playerName }} : {{ player.playerSymbol }}
+            </p>
+            <p class="cursor-pointer">
+              <i
+                (click)="edit(player.id)"
+                class="fa fa-pencil-square-o edit"
+              ></i>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div *ngIf="editMode">
+          <form [formGroup]="getForm">
+            <div class="row">
+              <div class="col-8">
+                <label class="form-label">Player Name </label>
+                <input
+                  type="Text"
+                  class="form-control"
+                  formControlName="playerName"
+                  [(ngModel)]="viewData.playerName"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label">Symbol</label>
+                <input
+                  type="Text"
+                  class="form-control"
+                  formControlName="playerSymbol"
+                  [(ngModel)]="viewData.playerSymbol"
+                  maxlength="1"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-2">
+              <button class="btn btn-primary btn-sm" (click)="onSubmit()">
+                Submit
+              </button>
+              <button class="btn btn-danger btn-sm" (click)="cancel()">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="msg" class="alert">
+          {{ msg }}
+        </div>
+        <div class="text-center" *ngIf="gameService.isGameOver">
+          <h4>
+            {{ gameService.winner?.playerName }} is Winner
+            <span>
+              <i class="fa fa-trophy" aria-hidden="true"></i>
+            </span>
+          </h4>
+          <button class="btn btn-primary mt-3" (click)="resetGame()">
+            Start New Game
+          </button>
+        </div>
+        <div *ngIf="startGame" class="text-center">
+          <button class="btn btn-primary mb-3" (click)="gameStart()">
+            Start Game
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="bord py-2">
+        <h1
+          class="text-center text-grey-darker"
+          *ngIf="!gameService.isGameRunning"
+        >
+          Tic-Tac-Toe
+        </h1>
+        <h1
+          class="text-center text-grey-darker"
+          *ngIf="gameService.isGameRunning"
+        >
+          Game is runing
+        </h1>
+        <app-home></app-home>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+<section></section>

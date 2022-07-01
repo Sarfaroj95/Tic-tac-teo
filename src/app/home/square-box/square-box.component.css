@@ -1,0 +1,24 @@
+.game-square {
+  height: 60px;
+  text-align: center;
+  line-height: 0.85;
+  margin: 3px;
+}
+
+p {
+  display: inline;
+  font-size: 3.9rem;
+  overflow: hidden;
+}
+.myShadow {
+  border: 1px solid rgb(163, 161, 161);
+  /* border-radius: 4px; */
+  cursor: pointer;
+}
+.myShadow:hover {
+  background-color: rgb(234, 235, 234);
+}
+
+.noClick {
+  pointer-events: none;
+}
